@@ -13,7 +13,4 @@ public:
 	static void Log(std::string message);
 };
 
-
-
-
 #endif // !CONSOLE_H

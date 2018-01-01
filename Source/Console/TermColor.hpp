@@ -43,7 +43,7 @@
 
 
 
-namespace termcolor
+namespace clr
 {
 	// Forward declaration of the `_internal` namespace.
 	// All comments are below.

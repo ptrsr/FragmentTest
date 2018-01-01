@@ -1,22 +1,23 @@
 #include "Program.h"
 
-#include "Console\Console.h"
+#include "..\Console\Console.h"
 
 Program::Program() : _window(NULL), _desiredFPS(60)
 {
 	InitializeWindow();
 	PrintVersionInfo();
 	InitializeGlew();
+	InitializeRenderer();
 }
 
 void Program::InitializeWindow(bool vcync)
 {
-	Console::Log("Initializing window");
 	_window = new sf::RenderWindow(sf::VideoMode(1280, 720), "Shader Tester", sf::Style::Default, sf::ContextSettings(24, 8, 0, 3, 3));
 	
 	if (vcync)
 		_window->setVerticalSyncEnabled(true);
 
+	Console::Log("Initialized window");
 }
 
 void Program::PrintVersionInfo()
@@ -44,14 +45,19 @@ void Program::PrintVersionInfo()
 
 void Program::InitializeGlew()
 {
-	Console::Log("Initializing GLEW");
 	//initialize the opengl extension wrangler
 	GLint glewStatus = glewInit();
 
-	if (glewStatus == 0)
+	if (glewStatus != GLEW_OK)
 		Console::Error("Couldn't initialize GLEW!");
 	else
-		Console::Log("Successfully initialized GLEW");
+		Console::Log("Initialized GLEW");
+}
+
+void Program::InitializeRenderer()
+{
+	_renderer = new Renderer();
+	Console::Log("Initialized renderer");
 }
 
 void Program::Run()

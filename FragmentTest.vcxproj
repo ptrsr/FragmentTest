@@ -24,12 +24,18 @@
   <ItemGroup>
     <ClCompile Include="Source\Console\Console.cpp" />
     <ClCompile Include="Source\Main.cpp" />
-    <ClCompile Include="Source\Program.cpp" />
+    <ClCompile Include="Source\Program\Program.cpp" />
+    <ClCompile Include="Source\Program\Renderer\Quad.cpp" />
+    <ClCompile Include="Source\Program\Renderer\Renderer.cpp" />
+    <ClCompile Include="Source\Program\Renderer\ShaderProgram.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Console\Console.h" />
     <ClInclude Include="Source\Console\TermColor.hpp" />
-    <ClInclude Include="Source\Program.h" />
+    <ClInclude Include="Source\Program\Program.h" />
+    <ClInclude Include="Source\Program\Renderer\Quad.h" />
+    <ClInclude Include="Source\Program\Renderer\Renderer.h" />
+    <ClInclude Include="Source\Program\Renderer\ShaderProgram.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E05FF271-82B7-4086-B89D-451815C122A3}</ProjectGuid>
